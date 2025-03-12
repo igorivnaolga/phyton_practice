@@ -1,7 +1,7 @@
 from pathlib import Path
 import random
 '''
-Написати функцію-генератор, яка буде шукати фуйли в поточній папці
+Написати функцію-генератор, яка буде шукати фaйли в поточній папці
 '''
 
 def generate_random_values(n: int):
@@ -26,7 +26,6 @@ def read_file(path: str):
     with open(path) as file:
        for line in file:
            print(line)
-
 
 # value_generator = generate_random_values(10)
 # print(next(value_generator))
