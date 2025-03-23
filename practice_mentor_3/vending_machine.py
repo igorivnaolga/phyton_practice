@@ -83,7 +83,7 @@ class VendingMachine:
         
         product_class = product.__class__
         if self.current_product_count[product_class] == self.max_product_counts[product_class]:
-            raise ValueError("Can not add moere products of this type")
+            raise ValueError("Can not add more products of this type")
         
         self.current_product_count[product_class] += 1
         #print (self.current_product_count)
