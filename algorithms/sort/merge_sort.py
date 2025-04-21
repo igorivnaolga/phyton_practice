@@ -1,7 +1,4 @@
 def merge_sort(arr):
-    # Print the array before splitting
-    print(f"Splitting: {arr}")
-    
     if len(arr) <= 1:
         return arr
 
@@ -9,18 +6,14 @@ def merge_sort(arr):
     left_half = arr[:mid]
     right_half = arr[mid:]
 
-    # Recursively sort and merge the left and right halves
     return merge(merge_sort(left_half), merge_sort(right_half))
 
 def merge(left, right):
-    # Print the arrays being merged
-    print(f"Merging: {left} and {right}")
-    
     merged = []
     left_index = 0
     right_index = 0
 
-    # Merge the smaller elements first
+    # Спочатку об'єднайте менші елементи
     while left_index < len(left) and right_index < len(right):
         if left[left_index] <= right[right_index]:
             merged.append(left[left_index])
@@ -29,7 +22,8 @@ def merge(left, right):
             merged.append(right[right_index])
             right_index += 1
 
-    # If there are remaining elements in the left or right array, add them to the result
+    # Якщо в лівій або правій половині залишилися елементи, 
+		# додайте їх до результату
     while left_index < len(left):
         merged.append(left[left_index])
         left_index += 1
@@ -38,12 +32,4 @@ def merge(left, right):
         merged.append(right[right_index])
         right_index += 1
 
-    # Print the merged result before returning
-    print(f"Merged: {merged}")
-    
     return merged
-
-# Test the merge_sort function with print statements
-numbers = [5, 3, 8, 4, 2]
-print(f"Sorted array: {merge_sort(numbers)}")
-
